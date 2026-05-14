@@ -1,0 +1,46 @@
+[project]
+name = "proyectoshoppingindicator"
+version = "0.1.0"
+description = "Sistema Predictivo de Intención de Compra"
+readme = "README.md"
+# Bajamos a 3.12 por compatibilidad extrema con PyTorch y Kaggle
+requires-python = "==3.12.*"
+dependencies = [
+    # --- Backend & API ---
+    "fastapi>=0.136.1",
+    "uvicorn>=0.46.0",
+    "pydantic>=2.10.0",
+
+    # --- Data Science & ML Stack ---
+    "polars>=1.20.0",
+    "pyarrow>=19.0.0",
+    "pandas>=3.0.2",
+    "scikit-learn>=1.8.0",
+
+    # --- Deep Learning (PyTorch + Keras) ---
+    "keras>=3.14.0",
+    "keras-tuner>=1.4.8",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+
+    # --- Visualización & Utilidades ---
+    "matplotlib>=3.10.8",
+    "seaborn>=0.13.2",
+    "gdown>=5.2.0",
+    "kagglehub>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "ruff>=0.15.12",
+    "nbconvert>=7.17.1",
+    "notebook>=7.5.5",
+]
+
+# --- MAGIA DE UV PARA PYTORCH ---
+# Le decimos a uv de dónde sacar las versiones optimizadas para GPU
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
