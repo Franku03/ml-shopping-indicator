@@ -1,6 +1,6 @@
 # PROYECTO SHOPPING INDICATOR 💸
 
-Python 3.12 + FastAPI + Pytorch / Keras + Polars
+Python 3.12 + FastAPI + Keras 3 con backend de PyTorch y Polars
 
 ## Inicializar proyecto
 ```bash
